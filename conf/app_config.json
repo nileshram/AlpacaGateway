@@ -8,7 +8,8 @@
       "api_secret": "pLr66bn7XtBw99Pw8zFf4iCDYiK8pWkys9TX3pBR"
     },
     "endpoint": {
-      "market_data": "wss://data.alpaca.markets/stream"
+      "market_data": "wss://data.alpaca.markets/stream",
+      "paper_account" : "https://paper-api.alpaca.markets"
     },
     "cmds": {
       "authenticate": {

@@ -11,29 +11,32 @@ class WebsocketClient:
     def __init__(self):
         self.api = ConfigurationFactory.create_config("app_config")["alpaca_api"]
         self._authenticate()
-        self._buffer = []
+        self._init_buffer()
 
     def _authenticate(self):
         self._auth = self.api["cmds"]["authenticate"]
+
+    def _init_buffer(self):
+        self._buffer = []
 
     def _is_connected(self):
         pass
 
     async def _recv(self):
-        return await self.ws.read_message()
+        return await self.conn.read_message()
 
     async def _send(self):
         pass
 
     async def read(self):
-        return await self.ws.read_message()
+        return await self.conn.read_message()
 
     async def write(self):
-        await self.ws.write_message(self._auth)
+        await self.conn.write_message(self._auth)
 
     async def connect(self):
         #test connection
-        self.ws = await websocket_connect(self.api["endpoint"]["market_data"])
+        self.conn = await websocket_connect(self.api["endpoint"]["market_data"])
 
     async def disconnect(self):
         pass

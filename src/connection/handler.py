@@ -1,12 +1,12 @@
 # Created by nilesh at 09/10/2020
 
-class RequestHandler:
+import tornado
+from tornado.websocket import websocket_connect
 
-    def __init__(self):
-        pass
-
-    def _process(self):
-        pass
-
-    def process(self):
-        pass
+conn = yield websocket_connect("wss://data.alpaca.markets/stream")
+while True:
+    msg = yield conn.read_message()
+    if msg is None:
+        break
+    else:
+        print(msg)
