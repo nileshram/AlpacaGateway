@@ -1,6 +1,29 @@
 {
-  "app_name" : "AlpacaGateway v.1",
-  "author" : "Nilesh Ramnarain",
-  "cmdline_args" : {},
-  "alpaca-api-cmds" : {"API-Key-ID" : "PK8TFB5RXT7EW6S4MKQT", "Secret-Key" : "pLr66bn7XtBw99Pw8zFf4iCDYiK8pWkys9TX3pBR" }
+  "app_name": "AlpacaGateway v.1",
+  "author": "Nilesh Ramnarain",
+  "cmdline_args": {},
+  "alpaca_api": {
+    "credentials": {
+      "api_key": "PK8TFB5RXT7EW6S4MKQT",
+      "api_secret": "pLr66bn7XtBw99Pw8zFf4iCDYiK8pWkys9TX3pBR"
+    },
+    "endpoint": {
+      "market_data": "wss://data.alpaca.markets/stream"
+    },
+    "cmds": {
+      "authenticate": {
+        "action": "authenticate",
+        "data": {
+          "key_id": "{}",
+          "secret_key": "{}"
+        }
+      },
+      "get_market": {
+        "action": "listen",
+        "data": {
+          "streams": []
+        }
+      }
+    }
+  }
 }

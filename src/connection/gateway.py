@@ -1,22 +1,38 @@
 # Created by nilesh at 09/10/2020
 
-class MarketDataAPI:
+from configuration import ConfigurationFactory
+import tornado
+from tornado.ioloop import PeriodicCallback
+from tornado.websocket import websocket_connect
+
+
+class WebsocketClient:
 
     def __init__(self):
-        pass
+        self.api = ConfigurationFactory.create_config("app_config")["alpaca_api"]
+        self.buffer = []
 
     def _authenticate(self):
-        pass
+        self._auth = self.api["cmds"]["authenticate"]
 
     def _is_connected(self):
         pass
 
-    def connect(self):
+    async def _recv(self):
+        return await self.ws.read_message()
+
+    async def _send(self):
         pass
 
-    def disconnect(self):
+    async def connect(self):
+        #test connection
+        self.ws = await websocket_connect(self.api["endpoint"]["market_data"])
+
+    async def disconnect(self):
         pass
 
-    def subscribe(self, *args):
-        pass
+
+
+
+
 

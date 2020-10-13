@@ -1,6 +1,6 @@
 # Created by nilesh at 09/10/2020
 
-class ConnectionHandler:
+class RequestHandler:
 
     def __init__(self):
         pass
