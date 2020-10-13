@@ -1,0 +1,6 @@
+{
+  "app_name" : "AlpacaGateway v.1",
+  "author" : "Nilesh Ramnarain",
+  "cmdline_args" : {},
+  "alpaca-api-cmds" : {"API-Key-ID" : "PK8TFB5RXT7EW6S4MKQT", "Secret-Key" : "pLr66bn7XtBw99Pw8zFf4iCDYiK8pWkys9TX3pBR" }
+}
